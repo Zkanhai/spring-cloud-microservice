@@ -1,0 +1,18 @@
+#server 端口号设置
+server:
+  port: 8081
+spring:
+  application:
+    name: eureka-server
+#注册中心设置，server本身不被发现
+eureka:
+  instance:
+    #6秒不发送心跳检查，就删除该实例，默认90秒
+    lease-expiration-duration-in-seconds: 6
+    #心跳检查的时间，默认30秒
+    lease-renewal-interval-in-seconds: 2
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
